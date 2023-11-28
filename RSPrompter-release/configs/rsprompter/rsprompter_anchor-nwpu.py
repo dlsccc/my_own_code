@@ -24,7 +24,7 @@ prompt_shape = (70, 5)  # (per img pointset, per pointset point)
 
 # sam base model
 hf_sam_pretrain_name = "facebook/sam-vit-base"
-hf_sam_pretrain_ckpt_path = "~/.cache/huggingface/hub/models--facebook--sam-vit-base/snapshots/b5fc59950038394bae73f549a55a9b46bc6f3d96/pytorch_model.bin"
+hf_sam_pretrain_ckpt_path = r"E:\code\sam_vit_h_4b8939.pth"   #11.27
 # # sam large model
 # hf_sam_pretrain_name = "facebook/sam-vit-large"
 # hf_sam_pretrain_ckpt_path = "~/.cache//huggingface/hub/models--facebook--sam-vit-large/snapshots/70009d56dac23ebb3265377257158b1d6ed4c802/pytorch_model.bin"
@@ -68,12 +68,12 @@ model = dict(
 dataset_type = 'NWPUInsSegDataset'
 
 #### should be changed align with your code root and data root
-code_root = '/mnt/home/xx/codes/RSPrompter'
-data_root = '/mnt/home/xx/data/NWPU'
+code_root = r'E:\code\my_own_code\RSPrompter-release'   #11.27
+data_root = r"E:\data\VHR-10_dataset_coco-master"       #11.27
 
 
-batch_size_per_gpu = 2
-num_workers = 8
+batch_size_per_gpu = 1
+num_workers = 2
 persistent_workers = True
 train_dataloader = dict(
     batch_size=batch_size_per_gpu,
